@@ -4,7 +4,7 @@ Tags: seo, ai, content, generation, minimax
 Requires at least: 6.0
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -64,6 +64,11 @@ MiniMax ist ein KI-Anbieter mit OpenAI-kompatibler API. Du kannst auch andere Op
 4. Verlauf generierter Artikel
 
 == Changelog ==
+
+= 1.0.1 =
+* Eigenes Top-Level-Menü mit Icon (statt unter Einstellungen)
+* API-Verbindungstest nutzt jetzt direkt den eingegebenen Key
+* Bessere Fehlermeldungen + Whitespace-Bereinigung beim Key
 
 = 1.0.0 =
 * Initial Release

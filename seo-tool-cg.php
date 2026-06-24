@@ -3,7 +3,7 @@
  * Plugin Name: SEO Tool CG
  * Plugin URI: https://github.com/Chiko028/SEO-Tool-CG-WP
  * Description: AI-gestützte Content-Generierung für WordPress. Erstellt SEO-optimierte Seiten-Entwürfe basierend auf Keywords. Verwendet die MiniMax API (kompatibel mit OpenAI).
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Chiko028
  * License: MIT
  * Text Domain: seo-tool-cg
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Konstanten
-define('SEO_TOOL_CG_VERSION', '1.0.0');
+define('SEO_TOOL_CG_VERSION', '1.0.1');
 define('SEO_TOOL_CG_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SEO_TOOL_CG_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('SEO_TOOL_CG_OPTION_KEY', 'seo_tool_cg_minimax_api_key');
