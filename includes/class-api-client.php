@@ -25,7 +25,15 @@ class SEO_Tool_CG_API_Client {
         if (empty($this->api_key)) {
             return new WP_Error(
                 'no_api_key',
-                __('Kein API-Key konfiguriert. Bitte unter Einstellungen → SEO Tool CG hinterlegen.', 'seo-tool-cg')
+                __('Kein API-Key konfiguriert. Bitte oben einen Key eingeben.', 'seo-tool-cg')
+            );
+        }
+
+        // Minimale Key-Validierung
+        if (strlen($this->api_key) < 10) {
+            return new WP_Error(
+                'invalid_key_format',
+                __('API-Key sieht zu kurz aus. Format: sk-api-...', 'seo-tool-cg')
             );
         }
 

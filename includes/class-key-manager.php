@@ -66,7 +66,9 @@ class SEO_Tool_CG_Key_Manager {
      * Speichert den API-Key verschlüsselt.
      */
     public static function set_api_key($key) {
-        $key = trim($key);
+        // Whitespace + unsichtbare Zeichen entfernen (manchmal kopiert mit Newlines)
+        $key = preg_replace('/\s+/', '', trim((string) $key));
+
         if (empty($key)) {
             delete_option(SEO_TOOL_CG_OPTION_KEY);
             return true;
@@ -74,10 +76,17 @@ class SEO_Tool_CG_Key_Manager {
 
         // Minimale Validierung
         if (strlen($key) < 10) {
-            return new WP_Error('invalid_key', __('API-Key zu kurz.', 'seo-tool-cg'));
+            return new WP_Error('invalid_key', __('API-Key zu kurz (mindestens 10 Zeichen).', 'seo-tool-cg'));
         }
 
-        return update_option(SEO_TOOL_CG_OPTION_KEY, self::encrypt($key));
+        // Format-Check — die meisten Keys fangen mit sk- an
+        // Wir lassen aber auch andere Formate zu
+        $result = update_option(SEO_TOOL_CG_OPTION_KEY, self::encrypt($key));
+
+        // wp_cache löschen damit der nächste get_api_key frisch lädt
+        wp_cache_delete(SEO_TOOL_CG_OPTION_KEY, 'options');
+
+        return $result;
     }
 
     /**

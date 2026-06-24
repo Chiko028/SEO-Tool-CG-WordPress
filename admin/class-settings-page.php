@@ -17,12 +17,19 @@ class SEO_Tool_CG_Settings_Page {
     }
 
     public function add_menu() {
-        add_options_page(
+        // Eigenes Top-Level-Menü statt unter Einstellungen
+        add_menu_page(
             __('SEO Tool CG', 'seo-tool-cg'),
             __('SEO Tool CG', 'seo-tool-cg'),
             'manage_options',
             self::MENU_SLUG,
-            [$this, 'render_page']
+            [$this, 'render_page'],
+            'data:image/svg+xml;base64,' . base64_encode(
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#a7aaad">
+                    <path d="M11 2.5a8.5 8.5 0 1 0 6.4 14.03l-1.41-1.41A6.5 6.5 0 1 1 11 4.5v3.7L7.4 5.1 11 1.5v1z"/>
+                </svg>'
+            ),
+            81 // Position: direkt nach "Werkzeuge" (80)
         );
     }
 

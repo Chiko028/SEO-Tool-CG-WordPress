@@ -13,9 +13,9 @@ class SEO_Tool_CG_History_Page {
 
     public function add_submenu() {
         add_submenu_page(
-            'options-general.php',
-            __('SEO Tool CG — Verlauf', 'seo-tool-cg'),
-            __('SEO Tool CG Verlauf', 'seo-tool-cg'),
+            'seo-tool-cg',
+            __('Verlauf', 'seo-tool-cg'),
+            __('Verlauf', 'seo-tool-cg'),
             'manage_options',
             'seo-tool-cg-history',
             [$this, 'render']

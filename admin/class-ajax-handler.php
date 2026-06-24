@@ -19,7 +19,16 @@ class SEO_Tool_CG_Ajax_Handler {
             wp_send_json_error(['message' => __('Keine Berechtigung.', 'seo-tool-cg')]);
         }
 
-        $client = new SEO_Tool_CG_API_Client();
+        // Vorrang: Key aus POST-Daten (vom Frontend direkt mitgeschickt)
+        // Fallback: Gespeicherter Key aus der DB
+        $key_from_form = sanitize_text_field($_POST['api_key'] ?? '');
+        $key_to_use = !empty($key_from_form) ? $key_from_form : SEO_Tool_CG_Key_Manager::get_api_key();
+
+        if (empty($key_to_use)) {
+            wp_send_json_error(['message' => __('Bitte zuerst API-Key eingeben.', 'seo-tool-cg')]);
+        }
+
+        $client = new SEO_Tool_CG_API_Client($key_to_use);
         $result = $client->test_connection();
 
         if (is_wp_error($result)) {
