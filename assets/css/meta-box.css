@@ -1,0 +1,94 @@
+/**
+ * SEO Tool CG - Meta-Box Styles (im Post-Editor)
+ */
+
+.seo-tool-cg-meta-box {
+    padding: 4px 0;
+}
+
+.seo-tool-cg-notice {
+    padding: 12px;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    border-left: 4px solid;
+}
+
+.seo-tool-cg-notice.error {
+    background: #fcf0f1;
+    border-left-color: #d63638;
+    color: #5a1a1c;
+}
+
+.seo-tool-cg-row {
+    margin-bottom: 12px;
+}
+
+.seo-tool-cg-row label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.seo-tool-cg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.seo-tool-cg-checks {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.seo-tool-cg-checks label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.seo-tool-cg-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+#stcg-status {
+    font-size: 13px;
+}
+
+.seo-tool-cg-info {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f1;
+    color: #646970;
+    font-size: 12px;
+}
+
+.seo-tool-cg-info .dashicons {
+    color: #2271b1;
+    margin-right: 4px;
+}
+
+.seo-tool-cg-preview {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+.seo-tool-cg-preview h3 {
+    margin-top: 0;
+}
+
+.seo-tool-cg-preview pre {
+    background: #fff;
+    padding: 12px;
+    border-radius: 3px;
+    overflow-x: auto;
+    font-size: 12px;
+    white-space: pre-wrap;
+}
